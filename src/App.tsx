@@ -17,7 +17,9 @@ function App() {
       const distance = countDownDate - now;
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      );
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -42,44 +44,44 @@ function App() {
   }, []);
 
   return (
-      <section className="timer-container">
-        <section className="timer">
-          <div>
-            <span className="timer-icon bi bi-calendar-date"></span>
-            <h2>Countdown timer</h2>
-            <p>Countdown to a really special event</p>
-          </div>
-          <div>
-            <section>
-              <p>{timerDays}</p>
-              <p>
-                <small>Days</small>
-              </p>
-            </section>
-            <span>:</span>
-            <section>
-              <p>{timerHours}</p>
-              <p>
-                <small>Hours</small>
-              </p>
-            </section>
-            <span>:</span>
-            <section>
-              <p>{timerMinutes}</p>
-              <p>
-                <small>Minutes</small>
-              </p>
-            </section>
-            <span>:</span>
-            <section>
-              <p>{timerSeconds}</p>
-              <p>
-                <small>Seconds</small>
-              </p>
-            </section>
-          </div>
-        </section>
+    <section className="timer-container">
+      <section className="timer">
+        <div>
+          <span className="timer-icon bi bi-calendar-date"></span>
+          <h2>Countdown timer</h2>
+          <p>Countdown to a really special event</p>
+        </div>
+        <div>
+          <section>
+            <p>{timerDays}</p>
+            <p>
+              <small>Days</small>
+            </p>
+          </section>
+          <span>:</span>
+          <section>
+            <p>{timerHours}</p>
+            <p>
+              <small>Hours</small>
+            </p>
+          </section>
+          <span>:</span>
+          <section>
+            <p>{timerMinutes}</p>
+            <p>
+              <small>Minutes</small>
+            </p>
+          </section>
+          <span>:</span>
+          <section>
+            <p>{timerSeconds}</p>
+            <p>
+              <small>Seconds</small>
+            </p>
+          </section>
+        </div>
       </section>
+    </section>
   );
 }
 
